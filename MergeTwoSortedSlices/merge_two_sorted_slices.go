@@ -2,26 +2,25 @@ package main
 
 import "fmt"
 
-func mergeSorted(a []int, b []int) (c []int) {
+func mergeSorted(a []int, b []int) []int {
 	var i, j int
 
-	for {
-		if i >= len(a) {
+	c := make([]int, len(a)+len(b))
+
+	for k := 0; k < len(c); k++ {
+		if i == len(a) {
+			c[k] = b[j]
 			j++
-		}
-		if j >= len(b) {
+			continue
+		} else if j == len(b) {
+			c[k] = a[i]
 			i++
-		}
-
-		if i >= len(a) && j >= len(b) {
-			break
-		}
-
-		if a[i] < b[j] {
-			c = append(c, a[i])
+			continue
+		} else if a[i] < b[j] {
+			c[k] = a[i]
 			i++
 		} else {
-			c = append(c, b[j])
+			c[k] = b[j]
 			j++
 		}
 	}
@@ -30,7 +29,7 @@ func mergeSorted(a []int, b []int) (c []int) {
 }
 
 func main() {
-	r := mergeSorted([]int{1, 7, 9}, []int{2, 12})
+	r := mergeSorted([]int{1, 7}, []int{2, 9, 12})
 
 	fmt.Printf("%+v", r)
 }
