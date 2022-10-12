@@ -1,6 +1,6 @@
 FROM golang:1.19-alpine as build
 
-COPY Stack /app
+COPY . /app
 
 WORKDIR /app
 
