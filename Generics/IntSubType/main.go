@@ -12,5 +12,5 @@ func PrintByte[T ByteSize](i T) {
 
 func main() {
 	PrintByte(uint8(6))
-	PrintByte(6)
+	//PrintByte(6)
 }
