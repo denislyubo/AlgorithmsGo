@@ -78,6 +78,9 @@ func main() {
 		}
 	}()
 
+	//for passing static checks
+	var _ = merge0
+
 	var mergedCh = merge(ch1, ch2)
 
 	for val := range mergedCh {
