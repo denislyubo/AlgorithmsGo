@@ -4,40 +4,6 @@ import (
 	"fmt"
 )
 
-func merge1(ch1, ch2 <-chan int) <-chan int {
-	ch := make(chan int, 1)
-
-	go func() {
-		for v := range ch1 {
-			ch <- v
-		}
-		for v := range ch2 {
-			ch <- v
-		}
-		close(ch)
-	}()
-
-	return ch
-}
-
-func merge2(ch1, ch2 <-chan int) <-chan int {
-	ch := make(chan int, 1)
-
-	go func() {
-		for {
-			select {
-			case v := <-ch1:
-				ch <- v
-			case v := <-ch2:
-				ch <- v
-			}
-		}
-		close(ch)
-	}()
-
-	return ch
-}
-
 func merge3(ch1, ch2 <-chan int) <-chan int {
 	ch := make(chan int, 1)
 	ch1Closed := false
@@ -98,10 +64,7 @@ func merge4(ch1, ch2 <-chan int) <-chan int {
 	return ch
 }
 
-func main() {
-	ch1 := make(chan int)
-	ch2 := make(chan int)
-
+func fillChannels(ch1, ch2 chan<- int) {
 	go func() {
 		for _, val := range []int{1, 2, 3} {
 			ch1 <- val
@@ -114,11 +77,23 @@ func main() {
 		}
 		close(ch2)
 	}()
+}
 
-	//for passing static checks
-	var _, _, _, _ = merge1, merge2, merge3, merge4
+func main() {
+	ch1 := make(chan int)
+	ch2 := make(chan int)
+	ch3 := make(chan int)
+	ch4 := make(chan int)
 
+	fillChannels(ch1, ch2)
 	var mergedCh = merge3(ch1, ch2)
+
+	for val := range mergedCh {
+		fmt.Println(val)
+	}
+
+	fillChannels(ch3, ch4)
+	mergedCh = merge4(ch3, ch4)
 
 	for val := range mergedCh {
 		fmt.Println(val)
