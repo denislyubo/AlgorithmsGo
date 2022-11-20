@@ -10,7 +10,7 @@ func abs(a int) int {
 
 func sortedSquares(nums []int) []int {
 	l := len(nums)
-	ret := make([]int, l, l)
+	ret := make([]int, l)
 	for i, j, k := 0, l-1, l-1; i <= j; {
 		if abs(nums[i]) >= abs(nums[j]) {
 			ret[k] = nums[i] * nums[i]
