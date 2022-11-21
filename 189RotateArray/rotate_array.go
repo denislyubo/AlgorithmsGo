@@ -11,10 +11,8 @@ func reverse(nums []int) {
 func rotate(nums []int, k int) {
 	reverse(nums)
 	k = k % len(nums)
-	if k <= len(nums) {
-		reverse(nums[:k])
-	}
-	if k < len(nums) {
+	reverse(nums[:k])
+	if k != len(nums) {
 		reverse(nums[k:])
 	}
 }
