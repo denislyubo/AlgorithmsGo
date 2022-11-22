@@ -1,5 +1,9 @@
 package binarysearch
 
+func Search(nums []int, target int) int {
+	return search(nums, target)
+}
+
 func search(nums []int, target int) int {
 	start := 0
 	end := len(nums) - 1
