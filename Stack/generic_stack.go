@@ -1,7 +1,7 @@
 package stack
 
 type GenStack[T any] struct {
-	data []any
+	data []T
 }
 
 func (s *GenStack[T]) Empty() bool {
