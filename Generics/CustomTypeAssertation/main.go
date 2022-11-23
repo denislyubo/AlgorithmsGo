@@ -25,6 +25,6 @@ func main() {
 	m = append(m, animal(2))
 	m = append(m, animal(3))
 
-	PrettyPrint[animal](m)
+	prettyPrint[animal](m)
 
 }
