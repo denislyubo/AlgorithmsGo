@@ -1,17 +1,21 @@
 package binaryheap
 
+// BinaryHeap - storage struct
 type BinaryHeap struct {
 	data []int
 }
 
+// NewBinaryHeap is constructor
 func NewBinaryHeap() *BinaryHeap {
 	return &BinaryHeap{}
 }
 
+// Size returns heap size
 func (bh *BinaryHeap) Size() int {
 	return len(bh.data)
 }
 
+// Add is adding element to heap
 func (bh *BinaryHeap) Add(val int) {
 	(*bh).data = append(bh.data, val)
 
@@ -50,6 +54,7 @@ func (bh *BinaryHeap) heapify(i int) {
 	}
 }
 
+// BuildHeap is function for heap ordering of underlying array
 func (bh *BinaryHeap) BuildHeap(sourceArray []int) {
 	(*bh).data = sourceArray
 	for i := bh.Size() / 2; i >= 0; i-- {
@@ -57,6 +62,7 @@ func (bh *BinaryHeap) BuildHeap(sourceArray []int) {
 	}
 }
 
+// GetMax returns element on top of heap and removes it from heap
 func (bh *BinaryHeap) GetMax() int {
 	var result int = bh.data[0]
 	bh.data[0] = bh.data[bh.Size()-1]
@@ -65,6 +71,7 @@ func (bh *BinaryHeap) GetMax() int {
 	return result
 }
 
+// HeapSort is sorting array using heap
 func (bh *BinaryHeap) HeapSort(array []int) {
 	bh.BuildHeap(array)
 	for i := len(array) - 1; i >= 0; i-- {
