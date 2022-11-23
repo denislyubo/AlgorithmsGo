@@ -22,9 +22,8 @@ func twoNumbersSumEquals(mas []int, k int) (int, int, error) {
 			if 2*mas[j] == k {
 				if val > 1 {
 					return mas[j], dest, nil
-				} else {
-					continue
 				}
+				continue
 			}
 
 			return mas[j], dest, nil

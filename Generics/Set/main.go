@@ -2,20 +2,24 @@ package main
 
 import "fmt"
 
+// Set generic set type
 type Set[T comparable] struct {
 	m map[T]struct{}
 }
 
+// NewSet is constructor
 func NewSet[T comparable]() *Set[T] {
 	return &Set[T]{
 		m: make(map[T]struct{}),
 	}
 }
 
+// Insert elem to set
 func (s *Set[T]) Insert(elem T) {
 	s.m[elem] = struct{}{}
 }
 
+// Delete is deletes elem from set
 func (s *Set[T]) Delete(elem T) {
 	delete(s.m, elem)
 }

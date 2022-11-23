@@ -2,15 +2,15 @@ package main
 
 import "fmt"
 
-type ByteSize interface {
+type byteSize interface {
 	byte | int8
 }
 
-func PrintByte[T ByteSize](i T) {
+func printByte[T byteSize](i T) {
 	fmt.Println(i)
 }
 
 func main() {
-	PrintByte(uint8(6))
-	//PrintByte(6)
+	printByte(uint8(6))
+	//printByte(6)
 }
