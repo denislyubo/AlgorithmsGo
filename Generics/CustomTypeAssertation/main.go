@@ -2,11 +2,11 @@ package main
 
 import "fmt"
 
-type Prettier interface {
+type prettier interface {
 	Pretty() string
 }
 
-func prettyPrint[T Prettier](items []T) {
+func prettyPrint[T prettier](items []T) {
 	for _, item := range items {
 		fmt.Println(item.Pretty())
 	}

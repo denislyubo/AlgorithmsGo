@@ -7,13 +7,13 @@ import "fmt"
 //2. 9  - m[i] = 6
 //3. i = 1 ... 7
 
-func TwoNumbersSumEquals(mas []int, k int) (int, int, error) {
+func twoNumbersSumEquals(mas []int, k int) (int, int, error) {
 	m := make(map[int]int)
 
 	var dest int = 0
 
 	for i := range mas {
-		m[mas[i]] += 1
+		m[mas[i]]++
 	}
 
 	for j := range mas {
@@ -36,9 +36,9 @@ func TwoNumbersSumEquals(mas []int, k int) (int, int, error) {
 
 func main() {
 
-	//i, j, err := TwoNumbersSumEquals([]int{3, 5, 2, 1, 7, 9, 3, 4}, 9)
+	//i, j, err := twoNumbersSumEquals([]int{3, 5, 2, 1, 7, 9, 3, 4}, 9)
 
-	i, j, err := TwoNumbersSumEquals([]int{4, 3, 3, 3, 3, 3, 3, 3}, 8)
+	i, j, err := twoNumbersSumEquals([]int{4, 3, 3, 3, 3, 3, 3, 3}, 8)
 
 	fmt.Printf("i=%d j=%d err=%v", i, j, err)
 }

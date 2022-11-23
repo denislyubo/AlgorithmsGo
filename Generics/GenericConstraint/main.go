@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-type Bar interface {
+type bar interface {
 	Bar() string
 }
 
@@ -10,27 +10,27 @@ type barImpl struct {
 }
 
 func (bi barImpl) Bar() string {
-	return "Bar"
+	return "bar"
 }
 
-type foo[B Bar] interface {
+type foo[B bar] interface {
 	Foo(b B)
 }
 
 type fooImpl struct {
 }
 
-func (fi fooImpl) Foo(b Bar) {
+func (fi fooImpl) Foo(b bar) {
 	fmt.Println("foo", b.Bar())
 }
 
-func Buzz(foostr foo[Bar]) {
-	foostr.Foo(barImpl{})
+func buzz(fooStr foo[bar]) {
+	fooStr.Foo(barImpl{})
 }
 
 func main() {
-	foostr := fooImpl{}
+	fooStr := fooImpl{}
 
-	Buzz(foostr)
+	buzz(fooStr)
 
 }
