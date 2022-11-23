@@ -20,6 +20,7 @@ func (s *stack) Top() interface{} {
 	return s.data[len(s.data)-1]
 }
 
+// Pair is key-value storage container
 type Pair struct {
 	key   int
 	value int

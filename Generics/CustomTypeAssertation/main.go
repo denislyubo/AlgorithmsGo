@@ -6,25 +6,25 @@ type Prettier interface {
 	Pretty() string
 }
 
-func PrettyPrint[T Prettier](items []T) {
+func prettyPrint[T Prettier](items []T) {
 	for _, item := range items {
 		fmt.Println(item.Pretty())
 	}
 }
 
-type Animal int
+type animal int
 
-func (a Animal) Pretty() string {
+func (a animal) Pretty() string {
 	return fmt.Sprintf("Pretty %d", a)
 }
 
 func main() {
-	m := make([]Animal, 0, 3)
+	m := make([]animal, 0, 3)
 
-	m = append(m, Animal(1))
-	m = append(m, Animal(2))
-	m = append(m, Animal(3))
+	m = append(m, animal(1))
+	m = append(m, animal(2))
+	m = append(m, animal(3))
 
-	PrettyPrint[Animal](m)
+	PrettyPrint[animal](m)
 
 }

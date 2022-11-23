@@ -5,8 +5,8 @@ func lengthOfLongestSubstring(s string) int {
 	maxCounter := 0
 	counter := 0
 	var ch rune
-	var start_index int = 0
-	i := start_index
+	var startIndex int = 0
+	i := startIndex
 	for i < len(s) {
 		ch = rune(s[i])
 
@@ -16,8 +16,8 @@ func lengthOfLongestSubstring(s string) int {
 		} else {
 			counter = 0
 			m = make(map[rune]bool)
-			start_index++
-			i = start_index
+			startIndex++
+			i = startIndex
 			continue
 		}
 
