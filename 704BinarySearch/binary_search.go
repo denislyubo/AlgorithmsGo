@@ -1,5 +1,6 @@
 package binarysearch
 
+// Search is exported version of search for use otside package
 func Search(nums []int, target int) int {
 	return search(nums, target)
 }

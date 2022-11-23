@@ -1,4 +1,4 @@
-package rotate_array
+package rotatearray
 
 import (
 	"reflect"

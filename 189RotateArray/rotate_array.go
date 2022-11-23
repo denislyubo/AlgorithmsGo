@@ -1,4 +1,4 @@
-package rotate_array
+package rotatearray
 
 func reverse(nums []int) {
 	for i, j := 0, len(nums)-1; i < j; {

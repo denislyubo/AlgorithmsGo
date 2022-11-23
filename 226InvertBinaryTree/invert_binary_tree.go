@@ -3,6 +3,8 @@ package invertbinarytree
 /**
  * Definition for a binary tree node.
  */
+
+// TreeNode is node of binary tree
 type TreeNode struct {
 	Val   int
 	Left  *TreeNode

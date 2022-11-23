@@ -4,6 +4,7 @@ package mergetwosortedlists
  * Definition for singly-linked list.
  */
 
+// ListNode is storage struct for list
 type ListNode struct {
 	Val  int
 	Next *ListNode
