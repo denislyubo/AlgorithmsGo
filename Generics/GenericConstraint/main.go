@@ -6,30 +6,30 @@ type Bar interface {
 	Bar() string
 }
 
-type BarImpl struct {
+type barImpl struct {
 }
 
-func (bi BarImpl) Bar() string {
+func (bi barImpl) Bar() string {
 	return "Bar"
 }
 
-type Foo[B Bar] interface {
+type foo[B Bar] interface {
 	Foo(b B)
 }
 
-type FooImpl struct {
+type fooImpl struct {
 }
 
-func (fi FooImpl) Foo(b Bar) {
-	fmt.Println("Foo", b.Bar())
+func (fi fooImpl) Foo(b Bar) {
+	fmt.Println("foo", b.Bar())
 }
 
-func Buzz(foostr Foo[Bar]) {
-	foostr.Foo(BarImpl{})
+func Buzz(foostr foo[Bar]) {
+	foostr.Foo(barImpl{})
 }
 
 func main() {
-	foostr := FooImpl{}
+	foostr := fooImpl{}
 
 	Buzz(foostr)
 
