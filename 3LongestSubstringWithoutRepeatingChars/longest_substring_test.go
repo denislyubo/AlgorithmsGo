@@ -1,27 +1,38 @@
 package longestsubstringwithoutrepeatingchars
 
-import "testing"
+import (
+	"testing"
+)
 
 func TestLengthOfLongestSubstring(t *testing.T) {
-	if lengthOfLongestSubstring("abcabcbb") != 3 {
-		t.Error("incorrect solution")
+	tests := map[string]struct {
+		input    string
+		expected int
+	}{
+		`first`: {
+			input:    "abcabcbb",
+			expected: 3,
+		},
+		`second`: {
+			input:    "h",
+			expected: 1,
+		},
+		`third`: {
+			input:    "aab",
+			expected: 2,
+		},
+		`forth`: {
+			input:    "pwwkew",
+			expected: 3,
+		},
 	}
-}
 
-func TestLengthOfLongestSubstringAnother(t *testing.T) {
-	if lengthOfLongestSubstring("pwwkew") != 3 {
-		t.Error("incorrect solution")
-	}
-}
-
-func TestLengthOfLongestSubstringGap(t *testing.T) {
-	if lengthOfLongestSubstring(" ") != 1 {
-		t.Error("incorrect solution")
-	}
-}
-
-func TestLengthOfLongestSubstringAAB(t *testing.T) {
-	if lengthOfLongestSubstring("aab") != 2 {
-		t.Error("incorrect solution")
+	for name, tt := range tests {
+		t.Run(name, func(t *testing.T) {
+			got := lengthOfLongestSubstring(tt.input)
+			if got != tt.expected {
+				t.Errorf("got: %d, expected: %d", got, tt.expected)
+			}
+		})
 	}
 }
