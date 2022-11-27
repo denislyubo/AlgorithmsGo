@@ -17,9 +17,10 @@ func TestMergeTrees(t *testing.T) {
 	exp := &Node{Val: 1,
 		Left: &Node{Val: 2,
 			Left:  &Node{Val: 4, Next: l3r},
-			Right: l3r},
+			Right: l3r,
+			Next:  r2},
 		Right: r2,
-		Next:  r2}
+	}
 	tests := map[string]struct {
 		given    *Node
 		expected *Node
