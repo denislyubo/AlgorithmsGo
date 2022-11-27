@@ -43,10 +43,6 @@ func connect(root *Node) *Node {
 	return root
 }
 
-func con(node *Node) {
-	node.Left.Next = node.Right
-}
-
 func equal(root1 *Node, root2 *Node) bool {
 	if (root1 == nil && root2 == nil) ||
 		(root1 != nil && root2 != nil && root1.Val == root2.Val &&

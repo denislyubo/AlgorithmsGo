@@ -12,7 +12,7 @@ func maxAreaOfIsland(grid [][]int) int {
 
 	for i := 0; i < nRows; i++ {
 		for j := 0; j < nCols; j++ {
-			if grid[i][j] == 1 && vis[i][j] == false {
+			if grid[i][j] == 1 && !vis[i][j] {
 				area := f(grid, vis, i, j, nRows, nCols)
 				if area > maxArea {
 					maxArea = area
@@ -25,7 +25,7 @@ func maxAreaOfIsland(grid [][]int) int {
 }
 
 func f(grid [][]int, vis [][]bool, i, j int, nRows, nCols int) (sum int) {
-	if i < 0 || i >= nRows || j < 0 || j >= nCols || vis[i][j] == true || grid[i][j] == 0 {
+	if i < 0 || i >= nRows || j < 0 || j >= nCols || vis[i][j] || grid[i][j] == 0 {
 		return 0
 	}
 
