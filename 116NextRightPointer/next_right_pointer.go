@@ -4,6 +4,7 @@ import (
 	"algogo/Queue"
 )
 
+// Node is main data structure of binary tree with next field.
 type Node struct {
 	Val   int
 	Left  *Node
