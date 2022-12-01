@@ -14,7 +14,7 @@ func updateMatrix(mat [][]int) [][]int {
 
 	for i := 0; i < nRows; i++ {
 		for j := 0; j < nRows; j++ {
-			dist[i][j] = bfs(mat, dist, vis, i, j, nRows, nCols)
+			bfs(mat, dist, vis, 0, i, j, nRows, nCols)
 		}
 	}
 
@@ -28,25 +28,6 @@ func min(a, b int) int {
 	return b
 }
 
-func bfs(mat, dist [][]int, vis [][]bool, i, j, nRows, nCols int) int {
-	if i < 0 || i >= nRows || j < 0 || j >= nCols {
-		return nRows * nCols
-	}
-	if vis[i][j] {
-		return dist[i][j]
-	}
-	if mat[i][j] == 0 {
-		return 0
-	} else {
-		vis[i][j] = true
-		dist[i][j] = 1 + min(
-			min(
-				bfs(mat, dist, vis, i-1, j, nRows, nCols),
-				bfs(mat, dist, vis, i+1, j, nRows, nCols)),
-			min(
-				bfs(mat, dist, vis, i, j-1, nRows, nCols),
-				bfs(mat, dist, vis, i, j+1, nRows, nCols)),
-		)
-		return dist[i][j]
-	}
+func bfs(mat, dist [][]int, vis [][]bool, prevWeight, i, j, nRows, nCols int) {
+
 }
