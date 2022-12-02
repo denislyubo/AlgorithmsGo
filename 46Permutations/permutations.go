@@ -10,7 +10,7 @@ func permute(nums []int) [][]int {
 }
 
 func helper(nums, current []int, ans *[][]int) {
-	if 0 == len(nums) {
+	if len(nums) == 0 {
 		*ans = append(*ans, current)
 		return
 	}
