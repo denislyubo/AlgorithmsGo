@@ -12,21 +12,21 @@ func letterCasePermutation(s string) []string {
 }
 
 func helper(s, current []byte, ans *[]string) {
-	if 0 == len(s) {
+	if len(s) == 0 {
 		*ans = append(*ans, string(current))
 		return
 	}
 
 	if s[0] >= '0' && s[0] <= '9' {
 		current = append(current, s[0])
-		helper(s[1:len(s)], current, ans)
+		helper(s[1:], current, ans)
 	} else {
 		for _, b := range []byte{byte(unicode.ToLower(rune(s[0]))), byte(unicode.ToUpper(rune(s[0])))} {
 			current = append(current, b)
 			curCopy := make([]byte, len(current), cap(current))
 			copy(curCopy, current)
 
-			helper(s[1:len(s)], curCopy, ans)
+			helper(s[1:], curCopy, ans)
 
 			current = current[0 : len(current)-1]
 		}

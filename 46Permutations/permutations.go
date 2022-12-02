@@ -19,7 +19,7 @@ func helper(nums, current []int, ans *[][]int) {
 		curCopy := make([]int, len(current), cap(current))
 		copy(curCopy, current)
 		nums[0], nums[i] = nums[i], nums[0]
-		helper(nums[1:len(nums)], curCopy, ans)
+		helper(nums[1:], curCopy, ans)
 		nums[0], nums[i] = nums[i], nums[0]
 		current = current[0 : len(current)-1]
 	}
