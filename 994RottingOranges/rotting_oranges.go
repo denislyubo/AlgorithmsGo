@@ -4,7 +4,7 @@ import (
 	"algogo/Queue"
 )
 
-type Pair struct {
+type pair struct {
 	i, j int
 }
 
@@ -27,7 +27,7 @@ func orangesRotting(grid [][]int) int {
 				cnt++
 			}
 			if grid[i][j] == 2 {
-				Q.PushBack(Pair{i, j})
+				Q.PushBack(pair{i, j})
 			}
 		}
 	}
@@ -35,19 +35,19 @@ func orangesRotting(grid [][]int) int {
 
 	for !Q.Empty() {
 		for lenQ := Q.Size(); lenQ > 0; lenQ-- {
-			r := Q.Top().(Pair)
+			r := Q.Top().(pair)
 			Q.PopFront()
 			i, j := r.i, r.j
-			for _, item := range []Pair{{i + 1, j}, {i - 1, j}, {i, j + 1}, {i, j - 1}} {
+			for _, item := range []pair{{i + 1, j}, {i - 1, j}, {i, j + 1}, {i, j - 1}} {
 				x, y := item.i, item.j
 				if x >= 0 && x < nRows && y >= 0 && y < nCols && grid[x][y] == 1 {
 					grid[x][y] = 2
 					cnt--
-					Q.PushBack(Pair{x, y})
+					Q.PushBack(pair{x, y})
 				}
 			}
 		}
-		res += 1
+		res++
 	}
 	if cnt == 0 {
 		return max(0, res-1)

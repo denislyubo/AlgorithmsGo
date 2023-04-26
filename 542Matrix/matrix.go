@@ -2,7 +2,7 @@ package matrix
 
 import queue "algogo/Queue"
 
-type Pair struct {
+type pair struct {
 	i, j int
 }
 
@@ -34,7 +34,7 @@ func updateMatrix(mat [][]int) [][]int {
 func bfs(mat, res [][]int, vis [][]bool, i, j, nRows, nCols int) {
 	Q := queue.Queue{}
 
-	Q.PushBack(Pair{i, j})
+	Q.PushBack(pair{i, j})
 	dist := 0
 	for i := 0; i < nRows; i++ {
 		for j := 0; j < nCols; j++ {
@@ -44,15 +44,15 @@ func bfs(mat, res [][]int, vis [][]bool, i, j, nRows, nCols int) {
 label:
 	for !Q.Empty() {
 		for lenQ := Q.Size(); lenQ > 0; lenQ-- {
-			r := Q.Top().(Pair)
+			r := Q.Top().(pair)
 			Q.PopFront()
 			ii, jj := r.i, r.j
 			vis[i][j] = true
-			for _, item := range []Pair{{ii + 1, jj}, {ii - 1, jj}, {ii, jj + 1}, {ii, jj - 1}} {
+			for _, item := range []pair{{ii + 1, jj}, {ii - 1, jj}, {ii, jj + 1}, {ii, jj - 1}} {
 				x, y := item.i, item.j
 				if x >= 0 && x < nRows && y >= 0 && y < nCols {
 					if mat[x][y] != 0 && !vis[x][y] {
-						Q.PushBack(Pair{x, y})
+						Q.PushBack(pair{x, y})
 					} else if !vis[x][y] {
 						dist++
 						break label
