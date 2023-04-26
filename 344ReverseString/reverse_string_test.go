@@ -28,8 +28,10 @@ func TestReverseString(t *testing.T) {
 		t.Run(name, func(t *testing.T) {
 			t.Parallel()
 
-			reverseString(tt.input)
-			inp := tt.input
+			var inp []byte
+			inp = append([]byte(nil), tt.input...)
+			reverseString(inp)
+
 			exp := tt.expected
 			if !reflect.DeepEqual(inp, exp) {
 				t.Errorf("got: %v, expected: %v", inp, exp)

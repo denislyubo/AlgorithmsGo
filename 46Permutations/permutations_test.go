@@ -27,9 +27,11 @@ func TestPermutations(t *testing.T) {
 		t.Run(name, func(t *testing.T) {
 			t.Parallel()
 
-			got := permute(tt.input)
+			var inp []int
+			inp = append([]int(nil), tt.input...)
+			got := permute(inp)
 			exp := tt.expected
-			if !reflect.DeepEqual(got, tt.expected) {
+			if !reflect.DeepEqual(got, exp) {
 				t.Errorf("got: %v, expected: %v", got, exp)
 			}
 		})

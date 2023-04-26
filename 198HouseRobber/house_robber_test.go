@@ -23,7 +23,7 @@ func TestRob(t *testing.T) {
 
 			got := rob(tt.input)
 			exp := tt.expected
-			if got != tt.expected {
+			if got != exp {
 				t.Errorf("got: %d, expected: %d", got, exp)
 			}
 		})

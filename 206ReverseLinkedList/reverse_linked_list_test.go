@@ -24,10 +24,10 @@ func TestReverseLinkedList(t *testing.T) {
 	for name, tt := range tests {
 		t.Run(name, func(t *testing.T) {
 			t.Parallel()
-
-			got := reverseList(tt.input)
+			inp := tt.input
+			got := reverseList(inp)
 			exp := tt.expected
-			if !equals(got, tt.expected) {
+			if !equals(got, exp) {
 				t.Errorf("got: %v, expected: %v", got, exp)
 			}
 		})

@@ -40,6 +40,11 @@ func TestMatrix(t *testing.T) {
 		t.Run(name, func(t *testing.T) {
 			t.Parallel()
 
+			var inp [][]int
+			for j := 0; j < len(inp); j++ {
+				inp[j] = append([]int(nil), tt.input[j]...)
+			}
+
 			got := updateMatrix(tt.input)
 			exp := tt.expected
 			if !reflect.DeepEqual(got, exp) {

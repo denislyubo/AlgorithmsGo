@@ -58,10 +58,12 @@ func TestFirstBadVersion(t *testing.T) {
 		t.Run(name, func(t *testing.T) {
 			t.Parallel()
 
-			isBadVersion = getIsBadVersion(tt.bad)
-			got := firstBadVersion(tt.n)
+			bad := tt.bad
+			n := tt.n
+			isBadVersion = getIsBadVersion(bad)
+			got := firstBadVersion(n)
 			exp := tt.expected
-			if got != tt.expected {
+			if got != exp {
 				t.Errorf("got: %d, expected: %d", got, exp)
 			}
 		})

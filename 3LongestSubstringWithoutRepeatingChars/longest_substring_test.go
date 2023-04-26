@@ -32,7 +32,7 @@ func TestLengthOfLongestSubstring(t *testing.T) {
 			t.Parallel()
 			got := lengthOfLongestSubstring(tt.input)
 			exp := tt.expected
-			if got != tt.expected {
+			if got != exp {
 				t.Errorf("got: %d, expected: %d", got, exp)
 			}
 		})

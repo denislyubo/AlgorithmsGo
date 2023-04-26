@@ -32,7 +32,8 @@ func TestMoveZeroes(t *testing.T) {
 		t.Run(name, func(t *testing.T) {
 			t.Parallel()
 
-			inp := tt.inputArray
+			var inp []int
+			inp = append([]int(nil), tt.inputArray...)
 			moveZeroes(inp)
 
 			exp := tt.expected

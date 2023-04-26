@@ -38,9 +38,13 @@ func TestSearchInsertPosition(t *testing.T) {
 	for name, tt := range tests {
 		t.Run(name, func(t *testing.T) {
 			t.Parallel()
-			got := searchInsert(tt.nums, tt.target)
+			var nums []int
+			nums = append([]int(nil), tt.nums...)
+			target := tt.target
 			exp := tt.expected
-			if got != tt.expected {
+			got := searchInsert(nums, target)
+
+			if got != exp {
 				t.Errorf("got: %d, expected: %d", got, exp)
 			}
 		})
