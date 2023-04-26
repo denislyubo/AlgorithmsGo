@@ -34,8 +34,9 @@ func TestHammingWeight(t *testing.T) {
 			t.Parallel()
 
 			got := hammingWeight(tt.n)
+			exp := tt.expected
 			if got != tt.expected {
-				t.Errorf("got: %d, expected: %d", got, tt.expected)
+				t.Errorf("got: %d, expected: %d", got, exp)
 			}
 		})
 	}

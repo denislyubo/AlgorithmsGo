@@ -21,8 +21,9 @@ func TestReverseWords(t *testing.T) {
 			t.Parallel()
 
 			got := reverseWords(tt.input)
-			if !reflect.DeepEqual(got, tt.expected) {
-				t.Errorf("got: %v, expected: %v", got, tt.expected)
+			exp := tt.expected
+			if !reflect.DeepEqual(got, exp) {
+				t.Errorf("got: %v, expected: %v", got, exp)
 			}
 		})
 	}

@@ -32,9 +32,12 @@ func TestMoveZeroes(t *testing.T) {
 		t.Run(name, func(t *testing.T) {
 			t.Parallel()
 
-			moveZeroes(tt.inputArray)
-			if !reflect.DeepEqual(tt.inputArray, tt.expected) {
-				t.Errorf("got: %v, expected: %v", tt.inputArray, tt.expected)
+			inp := tt.inputArray
+			moveZeroes(inp)
+
+			exp := tt.expected
+			if !reflect.DeepEqual(inp, exp) {
+				t.Errorf("got: %v, expected: %v", inp, exp)
 			}
 		})
 	}

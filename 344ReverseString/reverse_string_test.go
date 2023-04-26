@@ -29,8 +29,10 @@ func TestReverseString(t *testing.T) {
 			t.Parallel()
 
 			reverseString(tt.input)
-			if !reflect.DeepEqual(tt.input, tt.expected) {
-				t.Errorf("got: %v, expected: %v", tt.input, tt.expected)
+			inp := tt.input
+			exp := tt.expected
+			if !reflect.DeepEqual(inp, exp) {
+				t.Errorf("got: %v, expected: %v", inp, exp)
 			}
 		})
 	}

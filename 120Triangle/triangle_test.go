@@ -27,8 +27,9 @@ func TestTriangle(t *testing.T) {
 	for name, tt := range tests {
 		t.Run(name, func(t *testing.T) {
 			got := minimumTotal(tt.input)
+			exp := tt.expected
 			if got != tt.expected {
-				t.Errorf("got: %d, expected: %d", got, tt.expected)
+				t.Errorf("got: %d, expected: %d", got, exp)
 			}
 		})
 	}

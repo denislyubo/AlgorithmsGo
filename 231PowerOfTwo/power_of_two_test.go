@@ -34,8 +34,9 @@ func TestPowerOfTwo(t *testing.T) {
 			t.Parallel()
 
 			got := isPowerOfTwo(tt.n)
+			exp := tt.expected
 			if got != tt.expected {
-				t.Errorf("got: %v, expected: %v", got, tt.expected)
+				t.Errorf("got: %v, expected: %v", got, exp)
 			}
 		})
 	}

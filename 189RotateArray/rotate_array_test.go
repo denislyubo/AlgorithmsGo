@@ -35,10 +35,15 @@ func TestReverseArray(t *testing.T) {
 	for name, tt := range tests {
 		t.Run(name, func(t *testing.T) {
 			t.Parallel()
+			var inp []int
+			inp = append([]int(nil), tt.inputArray...)
+			var exp []int
+			exp = append([]int(nil), tt.expected...)
 
-			reverse(tt.inputArray)
-			if !reflect.DeepEqual(tt.inputArray, tt.expected) {
-				t.Errorf("got: %v, expected: %v", tt.inputArray, tt.expected)
+			reverse(inp)
+
+			if !reflect.DeepEqual(inp, exp) {
+				t.Errorf("got: %v, expected: %v", inp, exp)
 			}
 		})
 	}
@@ -79,9 +84,15 @@ func TestRotateArray(t *testing.T) {
 
 	for name, tt := range tests {
 		t.Run(name, func(t *testing.T) {
-			rotate(tt.inputArray, tt.steps)
-			if !reflect.DeepEqual(tt.inputArray, tt.expected) {
-				t.Errorf("got: %v, expected: %v", tt.inputArray, tt.expected)
+			t.Parallel()
+			var inp []int
+			inp = append([]int(nil), tt.inputArray...)
+			var exp []int
+			exp = append([]int(nil), tt.expected...)
+			stps := tt.steps
+			rotate(inp, stps)
+			if !reflect.DeepEqual(inp, exp) {
+				t.Errorf("got: %v, expected: %v", inp, exp)
 			}
 		})
 	}

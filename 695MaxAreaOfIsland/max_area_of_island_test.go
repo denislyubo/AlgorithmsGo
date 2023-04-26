@@ -38,8 +38,9 @@ func TestFloodFill(t *testing.T) {
 			t.Parallel()
 
 			got := maxAreaOfIsland(tt.grid)
+			exp := tt.expected
 			if !reflect.DeepEqual(tt.expected, got) {
-				t.Errorf("got: %v, expected: %v", got, tt.expected)
+				t.Errorf("got: %v, expected: %v", got, exp)
 			}
 		})
 	}

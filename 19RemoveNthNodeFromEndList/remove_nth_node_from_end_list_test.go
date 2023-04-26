@@ -70,9 +70,12 @@ func TestRemoveNthFromEnd(t *testing.T) {
 	for name, tt := range tests {
 		t.Run(name, func(t *testing.T) {
 			t.Parallel()
-			got := removeNthFromEnd(tt.input, tt.n)
-			if !equals(got, tt.expected) {
-				t.Errorf("got: %v, expected: %v", got, tt.expected)
+			inp := tt.input
+			n := tt.n
+			got := removeNthFromEnd(inp, n)
+			exp := tt.expected
+			if !equals(got, exp) {
+				t.Errorf("got: %v, expected: %v", got, exp)
 			}
 		})
 	}

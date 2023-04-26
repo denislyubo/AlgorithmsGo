@@ -26,8 +26,9 @@ func TestReverseLinkedList(t *testing.T) {
 			t.Parallel()
 
 			got := reverseList(tt.input)
+			exp := tt.expected
 			if !equals(got, tt.expected) {
-				t.Errorf("got: %v, expected: %v", got, tt.expected)
+				t.Errorf("got: %v, expected: %v", got, exp)
 			}
 		})
 	}

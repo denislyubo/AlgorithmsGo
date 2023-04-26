@@ -36,8 +36,9 @@ func TestMatrix(t *testing.T) {
 			t.Parallel()
 
 			got := combine(tt.n, tt.k)
+			exp := tt.expected
 			if !reflect.DeepEqual(got, tt.expected) {
-				t.Errorf("got: %v, expected: %v", got, tt.expected)
+				t.Errorf("got: %v, expected: %v", got, exp)
 			}
 		})
 	}

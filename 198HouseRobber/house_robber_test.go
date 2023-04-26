@@ -22,8 +22,9 @@ func TestRob(t *testing.T) {
 			t.Parallel()
 
 			got := rob(tt.input)
+			exp := tt.expected
 			if got != tt.expected {
-				t.Errorf("got: %d, expected: %d", got, tt.expected)
+				t.Errorf("got: %d, expected: %d", got, exp)
 			}
 		})
 	}

@@ -41,8 +41,9 @@ func TestTwoSum(t *testing.T) {
 	for name, tt := range tests {
 		t.Run(name, func(t *testing.T) {
 			got := twoSum(tt.numbers, tt.target)
+			exp := tt.expected
 			if !reflect.DeepEqual(got, tt.expected) {
-				t.Errorf("got: %v, expected: %v", got, tt.expected)
+				t.Errorf("got: %v, expected: %v", got, exp)
 			}
 		})
 	}

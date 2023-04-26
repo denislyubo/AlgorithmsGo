@@ -60,8 +60,9 @@ func TestFirstBadVersion(t *testing.T) {
 
 			isBadVersion = getIsBadVersion(tt.bad)
 			got := firstBadVersion(tt.n)
+			exp := tt.expected
 			if got != tt.expected {
-				t.Errorf("got: %d, expected: %d", got, tt.expected)
+				t.Errorf("got: %d, expected: %d", got, exp)
 			}
 		})
 	}
