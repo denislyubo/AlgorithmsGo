@@ -18,6 +18,8 @@ func TestBinaryHeap(t *testing.T) {
 }
 
 func TestBinaryHeapAdd(t *testing.T) {
+	t.Parallel()
+
 	heap := NewBinaryHeap()
 
 	heap.Add(28)
@@ -29,6 +31,8 @@ func TestBinaryHeapAdd(t *testing.T) {
 }
 
 func TestBinaryHeapAddTwoNumbers(t *testing.T) {
+	t.Parallel()
+
 	heap := NewBinaryHeap()
 
 	heap.Add(28)
@@ -41,6 +45,8 @@ func TestBinaryHeapAddTwoNumbers(t *testing.T) {
 }
 
 func TestBinaryHeapAddThreeNumbers(t *testing.T) {
+	t.Parallel()
+
 	heap := NewBinaryHeap()
 
 	heap.Add(7)

@@ -34,6 +34,8 @@ func TestReverseArray(t *testing.T) {
 
 	for name, tt := range tests {
 		t.Run(name, func(t *testing.T) {
+			t.Parallel()
+
 			reverse(tt.inputArray)
 			if !reflect.DeepEqual(tt.inputArray, tt.expected) {
 				t.Errorf("got: %v, expected: %v", tt.inputArray, tt.expected)

@@ -29,6 +29,8 @@ func TestRottingOranges(t *testing.T) {
 
 	for name, tt := range tests {
 		t.Run(name, func(t *testing.T) {
+			t.Parallel()
+
 			got := orangesRotting(tt.input)
 			if got != tt.expected {
 				t.Errorf("got: %v, expected: %v", got, tt.expected)

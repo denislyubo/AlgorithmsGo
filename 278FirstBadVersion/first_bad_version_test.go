@@ -56,6 +56,8 @@ func TestFirstBadVersion(t *testing.T) {
 
 	for name, tt := range tests {
 		t.Run(name, func(t *testing.T) {
+			t.Parallel()
+
 			isBadVersion = getIsBadVersion(tt.bad)
 			got := firstBadVersion(tt.n)
 			if got != tt.expected {

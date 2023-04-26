@@ -30,6 +30,8 @@ func TestMoveZeroes(t *testing.T) {
 
 	for name, tt := range tests {
 		t.Run(name, func(t *testing.T) {
+			t.Parallel()
+
 			moveZeroes(tt.inputArray)
 			if !reflect.DeepEqual(tt.inputArray, tt.expected) {
 				t.Errorf("got: %v, expected: %v", tt.inputArray, tt.expected)

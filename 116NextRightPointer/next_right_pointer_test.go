@@ -43,6 +43,8 @@ func TestMergeTrees(t *testing.T) {
 
 	for name, tt := range tests {
 		t.Run(name, func(t *testing.T) {
+			t.Parallel()
+
 			got := connect(tt.given)
 			if !equal(tt.expected, got) {
 				t.Errorf("got: %v, expected: %v", got, tt.expected)

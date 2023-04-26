@@ -35,6 +35,8 @@ func TestHasPathSum(t *testing.T) {
 
 	for name, tt := range tests {
 		t.Run(name, func(t *testing.T) {
+			t.Parallel()
+
 			got := hasPathSum(tt.root, tt.sum)
 			if !reflect.DeepEqual(got, tt.expected) {
 				t.Errorf("got: %v, expected: %v", got, tt.expected)

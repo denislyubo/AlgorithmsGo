@@ -34,8 +34,7 @@ func twoNumbersSumEquals(mas []int, k int) (int, int, error) {
 }
 
 func main() {
-
-	//i, j, err := twoNumbersSumEquals([]int{3, 5, 2, 1, 7, 9, 3, 4}, 9)
+	// i, j, err := twoNumbersSumEquals([]int{3, 5, 2, 1, 7, 9, 3, 4}, 9)
 
 	i, j, err := twoNumbersSumEquals([]int{4, 3, 3, 3, 3, 3, 3, 3}, 8)
 
