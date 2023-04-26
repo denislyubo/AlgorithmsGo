@@ -18,11 +18,11 @@ func TestRob(t *testing.T) {
 	}
 
 	for name, tt := range tests {
+		got := rob(tt.input)
+		exp := tt.expected
 		t.Run(name, func(t *testing.T) {
 			t.Parallel()
 
-			got := rob(tt.input)
-			exp := tt.expected
 			if got != exp {
 				t.Errorf("got: %d, expected: %d", got, exp)
 			}

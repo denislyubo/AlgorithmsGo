@@ -37,12 +37,13 @@ func TestMiddleNode(t *testing.T) {
 	}
 
 	for name, tt := range tests {
+		inp := tt.input
+		exp := tt.expected
 		t.Run(name, func(t *testing.T) {
 			t.Parallel()
 
-			got := middleNode(tt.input)
-			exp := tt.expected
-			if (got == nil && got != tt.expected) || (got != nil && got.Val != tt.expected.Val) {
+			got := middleNode(inp)
+			if (got == nil && got != exp) || (got != nil && got.Val != exp.Val) {
 				t.Errorf("got: %v, expected: %v", got, exp)
 			}
 		})
