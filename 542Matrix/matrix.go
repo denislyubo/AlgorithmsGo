@@ -6,14 +6,6 @@ type Pair struct {
 	i, j int
 }
 
-func max(a, b int) int {
-	if a > b {
-		return a
-	}
-
-	return b
-}
-
 func updateMatrix(mat [][]int) [][]int {
 	nRows, nCols := len(mat), len(mat[0])
 	res := make([][]int, nRows)
@@ -37,13 +29,6 @@ func updateMatrix(mat [][]int) [][]int {
 	}
 
 	return res
-}
-
-func min(a, b int) int {
-	if a < b {
-		return a
-	}
-	return b
 }
 
 func bfs(mat, res [][]int, vis [][]bool, i, j, nRows, nCols int) {
