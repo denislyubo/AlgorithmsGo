@@ -32,9 +32,12 @@ func TestSquareOfSortedArray(t *testing.T) {
 		t.Run(name, func(t *testing.T) {
 			t.Parallel()
 
-			got := sortedSquares(tt.input)
+			var inp []int
+			inp = append([]int(nil), tt.input...)
+
+			got := sortedSquares(inp)
 			exp := tt.expected
-			if !reflect.DeepEqual(got, tt.expected) {
+			if !reflect.DeepEqual(got, exp) {
 				t.Errorf("got: %v, expected: %v", got, exp)
 			}
 		})

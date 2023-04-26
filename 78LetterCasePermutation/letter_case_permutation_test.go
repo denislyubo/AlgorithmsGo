@@ -25,7 +25,8 @@ func TestPermutations(t *testing.T) {
 		t.Run(name, func(t *testing.T) {
 			t.Parallel()
 
-			got := letterCasePermutation(tt.input)
+			inp := tt.input
+			got := letterCasePermutation(inp)
 			exp := tt.expected
 			if !reflect.DeepEqual(got, tt.expected) {
 				t.Errorf("got: %v, expected: %v", got, exp)
