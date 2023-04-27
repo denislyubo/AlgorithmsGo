@@ -37,7 +37,7 @@ func TestMatrix(t *testing.T) {
 	}
 
 	for name, tt := range tests {
-		var inp [][]int
+		var inp = make([][]int, 3)
 		for j := 0; j < len(tt.input); j++ {
 			inp[j] = append([]int(nil), tt.input[j]...)
 		}
