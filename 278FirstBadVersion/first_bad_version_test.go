@@ -55,14 +55,13 @@ func TestFirstBadVersion(t *testing.T) {
 	}
 
 	for name, tt := range tests {
+		bad := tt.bad
+		n := tt.n
+		exp := tt.expected
 		t.Run(name, func(t *testing.T) {
 			t.Parallel()
-
-			bad := tt.bad
-			n := tt.n
 			isBadVersion = getIsBadVersion(bad)
 			got := firstBadVersion(n)
-			exp := tt.expected
 			if got != exp {
 				t.Errorf("got: %d, expected: %d", got, exp)
 			}

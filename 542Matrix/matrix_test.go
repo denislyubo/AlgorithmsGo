@@ -37,16 +37,14 @@ func TestMatrix(t *testing.T) {
 	}
 
 	for name, tt := range tests {
+		var inp [][]int
+		for j := 0; j < len(inp); j++ {
+			inp[j] = append([]int(nil), tt.input[j]...)
+		}
+		exp := tt.expected
 		t.Run(name, func(t *testing.T) {
 			t.Parallel()
-
-			var inp [][]int
-			for j := 0; j < len(inp); j++ {
-				inp[j] = append([]int(nil), tt.input[j]...)
-			}
-
-			got := updateMatrix(tt.input)
-			exp := tt.expected
+			got := updateMatrix(inp)
 			if !reflect.DeepEqual(got, exp) {
 				t.Errorf("got: %v, expected: %v", tt.input, exp)
 			}

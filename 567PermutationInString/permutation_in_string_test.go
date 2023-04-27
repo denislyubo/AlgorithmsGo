@@ -31,11 +31,12 @@ func TestLengthOfLongestSubstring(t *testing.T) {
 	}
 
 	for name, tt := range tests {
+		s1 := tt.s1
+		s2 := tt.s2
+		exp := tt.expected
 		t.Run(name, func(t *testing.T) {
 			t.Parallel()
-
-			got := checkInclusion(tt.s1, tt.s2)
-			exp := tt.expected
+			got := checkInclusion(s1, s2)
 			if got != tt.expected {
 				t.Errorf("got: %t, expected: %t", got, exp)
 			}

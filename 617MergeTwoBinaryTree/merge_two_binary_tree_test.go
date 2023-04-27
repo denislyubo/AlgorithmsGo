@@ -18,11 +18,12 @@ func TestMergeTrees(t *testing.T) {
 	}
 
 	for name, tt := range tests {
+		l := tt.left
+		r := tt.right
+		exp := tt.expected
 		t.Run(name, func(t *testing.T) {
 			t.Parallel()
-
-			got := mergeTrees(tt.left, tt.right)
-			exp := tt.expected
+			got := mergeTrees(l, r)
 			if !equal(tt.expected, got) {
 				t.Errorf("got: %v, expected: %v", got, exp)
 			}

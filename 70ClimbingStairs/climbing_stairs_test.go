@@ -20,11 +20,11 @@ func TestClimbingStairs(t *testing.T) {
 	}
 
 	for name, tt := range tests {
+		n := tt.n
+		exp := tt.expected
 		t.Run(name, func(t *testing.T) {
 			t.Parallel()
-
-			got := climbStairs(tt.n)
-			exp := tt.expected
+			got := climbStairs(n)
 			if got != tt.expected {
 				t.Errorf("got: %d, expected: %d", got, exp)
 			}

@@ -30,12 +30,11 @@ func TestPowerOfTwo(t *testing.T) {
 	}
 
 	for name, tt := range tests {
+		n := tt.n
+		exp := tt.expected
 		t.Run(name, func(t *testing.T) {
 			t.Parallel()
-
-			n := tt.n
 			got := isPowerOfTwo(n)
-			exp := tt.expected
 			if got != exp {
 				t.Errorf("got: %v, expected: %v", got, exp)
 			}

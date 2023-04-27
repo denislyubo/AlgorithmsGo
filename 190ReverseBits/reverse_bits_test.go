@@ -18,11 +18,11 @@ func TestReverseBits(t *testing.T) {
 	}
 
 	for name, tt := range tests {
+		n := tt.n
+		exp := tt.expected
 		t.Run(name, func(t *testing.T) {
 			t.Parallel()
-
-			got := reverseBits(tt.n)
-			exp := tt.expected
+			got := reverseBits(n)
 			if got != tt.expected {
 				t.Errorf("got: %d, expected: %d", got, exp)
 			}

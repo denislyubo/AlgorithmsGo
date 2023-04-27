@@ -28,10 +28,10 @@ func TestLengthOfLongestSubstring(t *testing.T) {
 	}
 
 	for name, tt := range tests {
+		got := lengthOfLongestSubstring(tt.input)
+		exp := tt.expected
 		t.Run(name, func(t *testing.T) {
 			t.Parallel()
-			got := lengthOfLongestSubstring(tt.input)
-			exp := tt.expected
 			if got != exp {
 				t.Errorf("got: %d, expected: %d", got, exp)
 			}

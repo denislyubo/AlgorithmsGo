@@ -34,11 +34,11 @@ func TestFloodFill(t *testing.T) {
 	}
 
 	for name, tt := range tests {
+		grid := tt.grid
+		exp := tt.expected
 		t.Run(name, func(t *testing.T) {
 			t.Parallel()
-
-			got := maxAreaOfIsland(tt.grid)
-			exp := tt.expected
+			got := maxAreaOfIsland(grid)
 			if !reflect.DeepEqual(tt.expected, got) {
 				t.Errorf("got: %v, expected: %v", got, exp)
 			}

@@ -25,14 +25,12 @@ func TestReverseString(t *testing.T) {
 	}
 
 	for name, tt := range tests {
+		var inp []byte
+		inp = append([]byte(nil), tt.input...)
+		exp := tt.expected
 		t.Run(name, func(t *testing.T) {
 			t.Parallel()
-
-			var inp []byte
-			inp = append([]byte(nil), tt.input...)
 			reverseString(inp)
-
-			exp := tt.expected
 			if !reflect.DeepEqual(inp, exp) {
 				t.Errorf("got: %v, expected: %v", inp, exp)
 			}

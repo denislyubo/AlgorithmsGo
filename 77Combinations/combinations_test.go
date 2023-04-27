@@ -32,14 +32,12 @@ func TestMatrix(t *testing.T) {
 	}
 
 	for name, tt := range tests {
+		n := tt.n
+		k := tt.k
+		exp := tt.expected
 		t.Run(name, func(t *testing.T) {
 			t.Parallel()
-
-			n := tt.n
-			k := tt.k
-
 			got := combine(n, k)
-			exp := tt.expected
 			if !reflect.DeepEqual(got, exp) {
 				t.Errorf("got: %v, expected: %v", got, exp)
 			}

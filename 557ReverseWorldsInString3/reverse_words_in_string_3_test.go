@@ -17,11 +17,11 @@ func TestReverseWords(t *testing.T) {
 	}
 
 	for name, tt := range tests {
+		inp := tt.input
+		exp := tt.expected
 		t.Run(name, func(t *testing.T) {
 			t.Parallel()
-
-			got := reverseWords(tt.input)
-			exp := tt.expected
+			got := reverseWords(inp)
 			if !reflect.DeepEqual(got, exp) {
 				t.Errorf("got: %v, expected: %v", got, exp)
 			}

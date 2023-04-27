@@ -30,11 +30,16 @@ func TestFloodFill(t *testing.T) {
 	}
 
 	for name, tt := range tests {
+		i := tt.image
+		sr := tt.sr
+		sc := tt.sc
+		col := tt.color
+		exp := tt.expected
 		t.Run(name, func(t *testing.T) {
 			t.Parallel()
 
-			got := floodFill(tt.image, tt.sr, tt.sc, tt.color)
-			exp := tt.expected
+			got := floodFill(i, sr, sc, col)
+
 			if !reflect.DeepEqual(tt.expected, got) {
 				t.Errorf("got: %v, expected: %v", got, exp)
 			}
