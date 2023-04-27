@@ -36,8 +36,7 @@ func TestSearchInsertPosition(t *testing.T) {
 	}
 
 	for name, tt := range tests {
-		var nums []int
-		nums = append([]int(nil), tt.nums...)
+		var nums = append([]int(nil), tt.nums...)
 		target := tt.target
 		exp := tt.expected
 		t.Run(name, func(t *testing.T) {

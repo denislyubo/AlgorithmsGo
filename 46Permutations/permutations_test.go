@@ -24,8 +24,7 @@ func TestPermutations(t *testing.T) {
 	}
 
 	for name, tt := range tests {
-		var inp []int
-		inp = append([]int(nil), tt.input...)
+		var inp = append([]int(nil), tt.input...)
 		exp := tt.expected
 		t.Run(name, func(t *testing.T) {
 			t.Parallel()

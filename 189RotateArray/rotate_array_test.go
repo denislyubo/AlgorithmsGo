@@ -33,10 +33,8 @@ func TestReverseArray(t *testing.T) {
 	}
 
 	for name, tt := range tests {
-		var inp []int
-		inp = append([]int(nil), tt.inputArray...)
-		var exp []int
-		exp = append([]int(nil), tt.expected...)
+		var inp = append([]int(nil), tt.inputArray...)
+		var exp = append([]int(nil), tt.expected...)
 		t.Run(name, func(t *testing.T) {
 			t.Parallel()
 
@@ -82,10 +80,8 @@ func TestRotateArray(t *testing.T) {
 	}
 
 	for name, tt := range tests {
-		var inp []int
-		inp = append([]int(nil), tt.inputArray...)
-		var exp []int
-		exp = append([]int(nil), tt.expected...)
+		var inp = append([]int(nil), tt.inputArray...)
+		var exp = append([]int(nil), tt.expected...)
 		stps := tt.steps
 		t.Run(name, func(t *testing.T) {
 			t.Parallel()

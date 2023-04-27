@@ -25,8 +25,7 @@ func TestReverseString(t *testing.T) {
 	}
 
 	for name, tt := range tests {
-		var inp []byte
-		inp = append([]byte(nil), tt.input...)
+		var inp = append([]byte(nil), tt.input...)
 		exp := tt.expected
 		t.Run(name, func(t *testing.T) {
 			t.Parallel()
