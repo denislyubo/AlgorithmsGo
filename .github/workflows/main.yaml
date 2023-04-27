@@ -51,6 +51,7 @@ jobs:
         run: |
           make build
       - name: Test
+        if: always()
         run: |
           make test
   deploy:
