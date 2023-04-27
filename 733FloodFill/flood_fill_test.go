@@ -40,7 +40,7 @@ func TestFloodFill(t *testing.T) {
 
 			got := floodFill(i, sr, sc, col)
 
-			if !reflect.DeepEqual(tt.expected, got) {
+			if !reflect.DeepEqual(exp, got) {
 				t.Errorf("got: %v, expected: %v", got, exp)
 			}
 		})

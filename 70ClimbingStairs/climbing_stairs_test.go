@@ -25,7 +25,7 @@ func TestClimbingStairs(t *testing.T) {
 		t.Run(name, func(t *testing.T) {
 			t.Parallel()
 			got := climbStairs(n)
-			if got != tt.expected {
+			if got != exp {
 				t.Errorf("got: %d, expected: %d", got, exp)
 			}
 		})

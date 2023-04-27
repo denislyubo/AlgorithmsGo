@@ -24,7 +24,7 @@ func TestMergeTrees(t *testing.T) {
 		t.Run(name, func(t *testing.T) {
 			t.Parallel()
 			got := mergeTrees(l, r)
-			if !equal(tt.expected, got) {
+			if !equal(exp, got) {
 				t.Errorf("got: %v, expected: %v", got, exp)
 			}
 		})

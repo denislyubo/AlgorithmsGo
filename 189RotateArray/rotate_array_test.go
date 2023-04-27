@@ -82,13 +82,13 @@ func TestRotateArray(t *testing.T) {
 	}
 
 	for name, tt := range tests {
+		var inp []int
+		inp = append([]int(nil), tt.inputArray...)
+		var exp []int
+		exp = append([]int(nil), tt.expected...)
+		stps := tt.steps
 		t.Run(name, func(t *testing.T) {
 			t.Parallel()
-			var inp []int
-			inp = append([]int(nil), tt.inputArray...)
-			var exp []int
-			exp = append([]int(nil), tt.expected...)
-			stps := tt.steps
 			rotate(inp, stps)
 			if !reflect.DeepEqual(inp, exp) {
 				t.Errorf("got: %v, expected: %v", inp, exp)

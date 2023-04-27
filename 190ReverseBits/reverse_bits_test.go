@@ -23,7 +23,7 @@ func TestReverseBits(t *testing.T) {
 		t.Run(name, func(t *testing.T) {
 			t.Parallel()
 			got := reverseBits(n)
-			if got != tt.expected {
+			if got != exp {
 				t.Errorf("got: %d, expected: %d", got, exp)
 			}
 		})
