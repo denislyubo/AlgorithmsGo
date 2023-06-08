@@ -31,7 +31,7 @@ func TestIsSubsequence(t *testing.T) {
 		`fifth`: {
 			s1:       "",
 			s2:       "dcda",
-			expected: false,
+			expected: true,
 		},
 	}
 
