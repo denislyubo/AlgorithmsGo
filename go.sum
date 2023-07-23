@@ -1,2 +1,4 @@
+github.com/golang-collections/collections v0.0.0-20130729185459-604e922904d3 h1:zN2lZNZRflqFyxVaTIU61KNKQ9C0055u9CAfpmqUvo4=
+github.com/golang-collections/collections v0.0.0-20130729185459-604e922904d3/go.mod h1:nPpo7qLxd6XL3hWJG/O60sR8ZKfMCiIoNap5GvD12KU=
 golang.org/x/exp v0.0.0-20221012134508-3640c57a48ea h1:c+JVtpqmcDxL2rnX9ramD4VqXvu01vReExyKr38B/l4=
 golang.org/x/exp v0.0.0-20221012134508-3640c57a48ea/go.mod h1:cyybsKvd6eL0RnXn6p/Grxp8F5bW7iYuBgsNCOHpMYE=
