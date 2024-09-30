@@ -27,9 +27,10 @@ func TestTwoSum(t *testing.T) {
 	for name, tt := range tests {
 		var inp = append([]int(nil), tt.input...)
 		exp := tt.expected
+		target := tt.target
 		t.Run(name, func(t *testing.T) {
 			t.Parallel()
-			got := twoSum(inp, tt.target)
+			got := twoSum(inp, target)
 			if !reflect.DeepEqual(got, exp) {
 				t.Errorf("got: %v, expected: %v", got, exp)
 			}
